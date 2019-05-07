@@ -18,7 +18,7 @@ public class TwentyOne {
 		compTotal = dealerHand();
 		playerTotal = playerHand();
 		while (keepPlaying) {
-			keepPlaying = check(playerTotal);
+			keepPlaying = check();
 		}
 		if (compTotal <= 21 && playerTotal <=21) {
 			compare(compTotal, playerTotal);
@@ -42,7 +42,7 @@ public class TwentyOne {
 		//}
 	}
 	
-	public static boolean check(int player) {
+	public static boolean check() {
 		
 			System.out.println("Would you like another card? Y/N");
 			Scanner input = new Scanner(System.in);
@@ -58,7 +58,7 @@ public class TwentyOne {
 				case ("yep"):
 				case ("Hit me"):
 				case ("hit me"):
-					playerTotal = nextCard(player);
+					playerTotal = nextCard(playerTotal);
 					//force computer to draw another card if player takes another card without going bust
 					if (playerTotal > 21) {
 						System.out.println("Sorry, you went over 21.  Your total is "+playerTotal);
