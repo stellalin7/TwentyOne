@@ -31,10 +31,10 @@ public class TwentyOne {
 			System.out.println("Computer wins.");
 		}else {*/
 			if (player > computer) {
-				System.out.println(String.format("You win.  Your total was %d, and the computer's was %d", player, computer));
+				System.out.println(String.format("You win.  Your total was %d, and the dealer's was %d", player, computer));
 			}
 			else {
-				System.out.println(String.format("You lose.  Your total was %d, and the computer's was %d", player, computer));
+				System.out.println(String.format("You lose.  Your total was %d, and the dealer's was %d", player, computer));
 				if (computer == player) {
 					System.out.println("(Dealer wins ties.)");
 				}
@@ -117,7 +117,7 @@ public class TwentyOne {
 				}
 			}
 			if (i==1) {
-				System.out.println("Computer's visible card is "+hand[i]);
+				System.out.println("Dealer's visible card is "+hand[i]);
 			}
 			total += value[i];	
 		}
