@@ -26,10 +26,10 @@ public class TwentyOne {
 	}
 	
 	public static void compare(int computer, int player) {
-		
+		/*v1-v2
 		if(player>21) {
 			System.out.println("Computer wins.");
-		}else {
+		}else {*/
 			if (player > computer) {
 				System.out.println(String.format("You win.  Your total was %d, and the computer's was %d", player, computer));
 			}
@@ -39,7 +39,7 @@ public class TwentyOne {
 					System.out.println("(Dealer wins ties.)");
 				}
 			}
-		}
+		//}
 	}
 	
 	public static boolean check(int player) {
