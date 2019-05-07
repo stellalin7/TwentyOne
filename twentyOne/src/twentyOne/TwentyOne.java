@@ -59,13 +59,15 @@ public class TwentyOne {
 				case ("Hit me"):
 				case ("hit me"):
 					playerTotal = nextCard(playerTotal);
-					//force computer to draw another card if player takes another card without going bust
+					//force computer to draw another card as long as they are not already at 21 if player takes another card without going bust
 					if (playerTotal > 21) {
 						System.out.println("Sorry, you went over 21.  Your total is "+playerTotal);
 						keepPlaying = false;
 					}
 					else {
-						compTotal = dealerNext(compTotal);
+						if (compTotal < 21) {
+							compTotal = dealerNext(compTotal);
+						}
 						if (compTotal> 21) {
 							System.out.println("You win.  Dealer's total is "+compTotal);
 							keepPlaying = false;
@@ -77,7 +79,7 @@ public class TwentyOne {
 					}
 					break;
 				default:
-					System.out.println("OK, see who wins.");
+					System.out.println("OK, let's see who won.");
 					input.close();
 					keepPlaying = false;
 				}
