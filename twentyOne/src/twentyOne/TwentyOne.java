@@ -11,6 +11,7 @@ public class TwentyOne {
 	static boolean keepPlaying = true;
 	static int playerTotal = 0;
 	static int compTotal = 0;
+	static boolean dealerAce = false;
 	static String[] cards = {"Ace","Deuce","Trey","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
 	static int[] values = {1,2,3,4,5,6,7,8,9,10,10,10,10};
 	
@@ -20,7 +21,9 @@ public class TwentyOne {
 		while (keepPlaying) {
 			keepPlaying = check(playerTotal);
 		}
-		compare(compTotal, playerTotal);
+		if (compTotal <= 21) {
+			compare(compTotal, playerTotal);
+		}
 	}
 	
 	public static void compare(int computer, int player) {
@@ -59,8 +62,16 @@ public class TwentyOne {
 				case ("yep"):
 				case ("Hit me"):
 				case ("hit me"):
-					playerTotal = play(playerTotal);
-					keepPlaying = true;
+					playerTotal = nextCard(playerTotal);
+					//force computer to draw another card if player takes another card
+					compTotal = dealerNext(compTotal);
+					if (compTotal> 21) {
+						System.out.println("You win.  Dealer's total is "+compTotal);
+						keepPlaying = false;
+					}
+					else {
+						keepPlaying = true;
+					}
 					break;
 				default:
 					input.close();
@@ -69,6 +80,7 @@ public class TwentyOne {
 		}
 		return keepPlaying;
 	}
+	
 	
 	/*v1
 	public static int dealerHand() {
@@ -83,15 +95,15 @@ public class TwentyOne {
 		int [] value = new int [2];
 		int total = 0;
 		int index=0;
-		boolean ace = false;
+		
 		for (int i = 0; i <2; i++) {
 			index=getIndex();
 			value[i] = values[index];
 			hand[i] = cards[index];
 			if(index == 0) {
-				if(!ace) {
+				if(!dealerAce) {
 					value[i] = 11;
-					ace = true;
+					dealerAce = true;
 					//force first Ace drawn by dealer to be 11
 				}
 				else {
@@ -118,7 +130,7 @@ public class TwentyOne {
 			index=getIndex();
 			value[i] = values[index];
 			hand[i] = cards[index];
-			System.out.println(String.format("Card %d is a %s", i+1, hand[i]));
+			System.out.println(String.format("Your card %d is a %s", i+1, hand[i]));
 			if(index == 0) {
 				value[i] = getAceValue();
 			}
@@ -157,16 +169,32 @@ public class TwentyOne {
 	}*/
 	
 	
-	public static int play (int total) {
+	public static int nextCard (int total) {
 		int index=getIndex();
-		int nextValue = values[index];
-		String nextCard = cards[index];
-		
-		System.out.println("Your next card is " + nextCard);
+		int nextValue = values[index];	
+		System.out.println("Your next card is " + cards[index]);
 		if(index == 0) {
 			nextValue = getAceValue();
 		}
 		return total + nextValue;
+	}
+	
+	public static int dealerNext(int comp) {
+		int index=getIndex();
+		int nextValue = values[index];	
+		System.out.println("Dealer's next card is " + cards[index]);
+		if(index == 0) {
+			if(!dealerAce) {
+				nextValue = 11;
+				dealerAce = true;
+				System.out.println("Value of dealer's ace is 11");
+			}
+			else {
+				nextValue = 1;
+				System.out.println("Value of dealer's ace is 1");
+			}
+		}
+		return comp + nextValue;
 	}
 	
 	
