@@ -11,7 +11,6 @@ public class TwentyOne {
 	static boolean keepPlaying = true;
 	static int playerTotal = 0;
 	static int compTotal = 0;
-	static boolean dealerAce = false;
 	static String[] cards = {"Ace","Deuce","Trey","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
 	static int[] values = {1,2,3,4,5,6,7,8,9,10,10,10,10};
 	
@@ -43,11 +42,7 @@ public class TwentyOne {
 	}
 	
 	public static boolean check(int player) {
-		if (player > 21) {
-			System.out.println("Sorry, you went over 21.  Your total is "+player);
-			keepPlaying = false;
-		}
-		else {
+		
 			System.out.println("Would you like another card? Y/N");
 			Scanner input = new Scanner(System.in);
 			String choice = input.nextLine();
@@ -62,22 +57,28 @@ public class TwentyOne {
 				case ("yep"):
 				case ("Hit me"):
 				case ("hit me"):
-					playerTotal = nextCard(playerTotal);
-					//force computer to draw another card if player takes another card
-					compTotal = dealerNext(compTotal);
-					if (compTotal> 21) {
-						System.out.println("You win.  Dealer's total is "+compTotal);
+					playerTotal = nextCard(player);
+					//force computer to draw another card if player takes another card without going bust
+					if (playerTotal > 21) {
+						System.out.println("Sorry, you went over 21.  Your total is "+playerTotal);
 						keepPlaying = false;
 					}
 					else {
-						keepPlaying = true;
+						compTotal = dealerNext(compTotal);
+						if (compTotal> 21) {
+							System.out.println("You win.  Dealer's total is "+compTotal);
+							keepPlaying = false;
+						}
+						else {
+							keepPlaying = true;
+						}
 					}
 					break;
 				default:
 					input.close();
 					keepPlaying = false;
 				}
-		}
+		
 		return keepPlaying;
 	}
 	
@@ -91,6 +92,7 @@ public class TwentyOne {
 	}*/
 	
 	public static int dealerHand() {
+		boolean dealerAce = false;
 		String [] hand = new String [2];
 		int [] value = new int [2];
 		int total = 0;
@@ -184,9 +186,8 @@ public class TwentyOne {
 		int nextValue = values[index];	
 		System.out.println("Dealer's next card is " + cards[index]);
 		if(index == 0) {
-			if(!dealerAce) {
+			if(comp<=10) {
 				nextValue = 11;
-				dealerAce = true;
 				System.out.println("Value of dealer's ace is 11");
 			}
 			else {
