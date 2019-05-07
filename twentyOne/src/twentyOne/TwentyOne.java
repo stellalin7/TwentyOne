@@ -119,7 +119,7 @@ public class TwentyOne {
 				}
 			}
 			if (i==1) {
-				System.out.println("Dealer's visible card is "+hand[i]);
+				System.out.println("Dealer's visible card is a "+hand[i]);
 			}
 			total += value[i];	
 		}
@@ -179,7 +179,7 @@ public class TwentyOne {
 	public static int nextCard (int total) {
 		int index=getIndex();
 		int nextValue = values[index];	
-		System.out.println("Your next card is " + cards[index]);
+		System.out.println("Your next card is a " + cards[index]);
 		if(index == 0) {
 			nextValue = getAceValue();
 		}
@@ -189,7 +189,7 @@ public class TwentyOne {
 	public static int dealerNext(int comp) {
 		int index=getIndex();
 		int nextValue = values[index];	
-		System.out.println("Dealer's next card is " + cards[index]);
+		System.out.println("Dealer's next card is a " + cards[index]);
 		if(index == 0) {
 			if(comp<=10) {
 				nextValue = 11;
