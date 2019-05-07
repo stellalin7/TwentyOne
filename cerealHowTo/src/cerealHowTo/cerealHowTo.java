@@ -11,12 +11,11 @@ public class cerealHowTo {
 		};
 		
 		String supplies [][] = {
-				{"bowl",null},
-				{"spoon","drawer"}	
+				{"bowl","cabinet"},
+				{"spoon",null}	
 		};
 		
 		int i=0;
-		
 		do {
 			if (ingredients[i][1] != null) {
 				System.out.println(String.format("Get %s from %s", ingredients[i][0],ingredients[i][1]));
@@ -37,14 +36,12 @@ public class cerealHowTo {
 					}
 					if (j==supplies.length) {
 						for (int y = 0; y<ingredients.length;y++) {
-							System.out.println(String.format("Pour %s into bowl",ingredients[y]));
+							System.out.println(String.format("Pour %s into bowl",ingredients[y][0]));
 						}
 						System.out.println("Eat your cereal with a spoon");
 					}
 				}while(j<supplies.length);
 			}
 		}while(i<ingredients.length);
-		
-		
 	}
 }
