@@ -17,11 +17,16 @@ public class TwentyOne {
 	public static void main(String[] args) {
 		compTotal = dealerHand();
 		playerTotal = playerHand();
-		while (keepPlaying) {
-			keepPlaying = check();
+		if (playerTotal <= 21) {
+			while (keepPlaying) {
+				keepPlaying = check();
+			}
+			if (compTotal <= 21 && playerTotal <=21) {
+				compare(compTotal, playerTotal);
+			}
 		}
-		if (compTotal <= 21 && playerTotal <=21) {
-			compare(compTotal, playerTotal);
+		else {
+			System.out.println("You lost.  Your total is "+playerTotal);
 		}
 	}
 	
@@ -31,10 +36,10 @@ public class TwentyOne {
 			System.out.println("Computer wins.");
 		}else {*/
 			if (player > computer) {
-				System.out.println(String.format("You win.  Your total was %d, and the dealer's was %d.", player, computer));
+				System.out.println(String.format("You won.  Your total was %d, and the dealer's was %d.", player, computer));
 			}
 			else {
-				System.out.println(String.format("You lose.  Your total was %d, and the dealer's was %d.", player, computer));
+				System.out.println(String.format("You lost.  Your total was %d, and the dealer's was %d.", player, computer));
 				if (computer == player) {
 					System.out.println("(Dealer wins ties.)");
 				}
