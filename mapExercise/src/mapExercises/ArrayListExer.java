@@ -7,9 +7,10 @@ public class ArrayListExer {
 	
 
 	public static void main(String[] args) {
-		ArrayList <Integer> numbers = new ArrayList<Integer>(5);
+		ArrayList <Integer> numbers = new ArrayList<Integer>();
+		int listSize = 5;
 		Scanner input = new Scanner(System.in);
-		for (int i=0; i<5;i++) {
+		for (int i=0; i<listSize;i++) {
 			numbers.add(fill(input,i));
 		}
 		input.close();
