@@ -13,6 +13,7 @@ public class TwentyOne {
 	static int compTotal = 0;
 	static String[] cards = {"Ace","Deuce","Trey","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
 	static int[] values = {1,2,3,4,5,6,7,8,9,10,10,10,10};
+	static String hiddenCard = null;
 	
 	public static void main(String[] args) {
 		compTotal = dealerHand();
@@ -37,9 +38,11 @@ public class TwentyOne {
 		}else {*/
 			if (player > computer) {
 				System.out.println(String.format("You won.  Your total was %d, and the dealer's was %d.", player, computer));
+				System.out.println("Dealer's hidden card was a "+hiddenCard);
 			}
 			else {
 				System.out.println(String.format("You lost.  Your total was %d, and the dealer's was %d.", player, computer));
+				System.out.println("Dealer's hidden card was a "+hiddenCard);
 				if (computer == player) {
 					System.out.println("(Dealer wins ties.)");
 				}
@@ -75,6 +78,7 @@ public class TwentyOne {
 						}
 						if (compTotal> 21) {
 							System.out.println("You win.  Dealer's total is "+compTotal);
+							System.out.println("Dealer's hidden card was a "+hiddenCard);
 							keepPlaying = false;
 						}
 						else {
@@ -123,7 +127,10 @@ public class TwentyOne {
 					//second Ace drawn by dealer is 1 (to avoid automatically going over 21)
 				}
 			}
-			if (i==1) {
+			if (i==0) {
+				hiddenCard = hand[i];
+			}
+			else {
 				System.out.println("Dealer's visible card is a "+hand[i]);
 			}
 			total += value[i];	
