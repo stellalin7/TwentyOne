@@ -9,6 +9,10 @@ public class Car {
 	private int speed;
 	private int mpg;
 	
+	private static final int MAX_NUMBER_DOORS = 6;
+	private static final int MIN_NUMBER_DOORS = 1;
+	private static final int MIN_MPG = 25;
+	
 	public Car() {
 		this.make = "Toyota";
 		this.model = "Prius";
@@ -49,7 +53,7 @@ public class Car {
 	}
 
 	public Car setNumberDoors(int numberDoors) {
-		if (numberDoors > 1 && numberDoors < 6) {
+		if (numberDoors > MIN_NUMBER_DOORS && numberDoors < MAX_NUMBER_DOORS) {
 			this.numberDoors = numberDoors;
 		}
 		else {
@@ -91,11 +95,11 @@ public class Car {
 
 	private Car setMpg(int mpg) {
 		if (mpg>25) {
-			this.mpg = mpg;
+			this.mpg = MIN_MPG;
 		}
 		else {
-			System.out.println("The minimum mpg is 25.");
-			this.mpg=25;
+			System.out.println("The minimum mpg is "+MIN_MPG);
+			this.mpg=MIN_MPG;
 		}
 		return this;
 	}
