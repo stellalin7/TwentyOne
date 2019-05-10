@@ -15,9 +15,12 @@ public class ArrayListExer {
 		}
 		input.close();
 		System.out.println("The numbers in your ArrayList are: "+numbers);
-		Collections.sort(numbers);
+		/*Collections.sort(numbers);
 		System.out.println("The smallest number in your ArrayList is: "+numbers.get(0));
-		System.out.println("The largest number in your ArrayList is: "+numbers.get(numbers.size()-1));
+		System.out.println("The largest number in your ArrayList is: "+numbers.get(numbers.size()-1));*/
+		System.out.println("The smallest number in your ArrayList is: "+Collections.min(numbers));
+		System.out.println("The largest number in your ArrayList is: "+Collections.max(numbers));
+		
 		System.out.println("The sum of all the numbers in your ArrayList is "+sum(numbers));
 		System.out.println("The product of all the numbers in your ArrayList is "+product(numbers));
 	}

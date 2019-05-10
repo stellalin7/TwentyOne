@@ -10,14 +10,24 @@ public class carHashMap {
 		addToInventory("Prius","Toyota");
 		addToInventory("Civic","Honda");
 		addToInventory("Miata","Mazda");
-		addToInventory("Six","Mazda");
 		addToInventory("Camry","Toyota");
 		addToInventory("Accord","Honda");
+		String model = askModel();
 
 	}
 	
 	public static void addToInventory (String model, String make){
 		inventory.put(model,make);	
 	}
+	
+	public static String askModel () {
+		System.out.println("What model are you looking for?");
+		Scanner input = new Scanner(System.in);
+		String model = input.nextLine();
+		input.close();
+		return model;
+	}
+	
+	
 
 }
