@@ -24,7 +24,7 @@ public class Human {
 	public static void main(String[] args) {
 		Human person = new Human();
 		System.out.println(person.toString());
-		System.out.println(person.setAge(11).toString());
+		System.out.println(person.setAge(22).toString());
 	}
 	
 	
