@@ -27,6 +27,7 @@ public class Car {
 		Car prius = new Car();
 		System.out.println(prius.toString());
 		//System.out.println(prius.setSpeed(70).setMpg(40).toString());
+		System.out.println(prius.setNumberDoors(1).toString());
 		System.out.println(prius.accelerate(20).toString());
 		System.out.println(prius.brake().toString());
 	}
@@ -58,7 +59,7 @@ public class Car {
 			this.numberDoors = numberDoors;
 		}
 		else {
-			System.out.println(numberDoors + "is not a valid number of doors for a street-legal car.");
+			System.out.println(numberDoors + " is not a valid number of doors for a street-legal car.");
 			this.numberDoors = 4;
 		}
 		return this;

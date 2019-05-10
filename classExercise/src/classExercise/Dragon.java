@@ -33,6 +33,7 @@ public class Dragon {
 	public static void main(String[] args) {
 		Dragon puff = new Dragon("Puff the Magic Dragon");
 		System.out.println(puff.toString());
+		System.out.println(puff.setHeight(0).setWingSpan(0).toString());
 		System.out.println(puff.getName() + " is growing: "+puff.growHeight(5).growWingSpan(10).toString());
 	}
 
