@@ -92,17 +92,6 @@ public class Car {
 	public int getMpg() {
 		return mpg;
 	}
-
-	private Car setMpg(int mpg) {
-		if (mpg>25) {
-			this.mpg = MIN_MPG;
-		}
-		else {
-			System.out.println("The minimum mpg is "+MIN_MPG);
-			this.mpg=MIN_MPG;
-		}
-		return this;
-	}
 	
 	public static boolean mpgEqual(Car c1, Car c2) {
 		return c1.getMpg()==c2.getMpg();
@@ -141,7 +130,8 @@ public class Car {
 		return "Car [make=" + make + ", model=" + model + ", numberDoors=" + numberDoors + ", speed=" + speed + ", mpg="
 				+ mpg + "]";
 	}
-	
+
+
 	public static void main(String[] args) {
 		Car prius = new Car();
 		System.out.println(prius.toString());
@@ -157,6 +147,20 @@ public class Car {
 		System.out.println(prius.brake().toString());
 		System.out.println(insight.setMpg(1).toString());
 	}
+	
+	private Car setMpg(int mpg) {
+		if (mpg>25) {
+			this.mpg = MIN_MPG;
+		}
+		else {
+			System.out.println("The minimum mpg is "+MIN_MPG);
+			this.mpg=MIN_MPG;
+		}
+		return this;
+	}
+	
+		
+	
 
 	
 
