@@ -89,13 +89,13 @@ public class Car {
 		return mpg;
 	}
 
-	public Car setMpg(int mpg) {
-		if (mpg>5) {
+	private Car setMpg(int mpg) {
+		if (mpg>25) {
 			this.mpg = mpg;
 		}
 		else {
-			System.out.println("The minimum mpg is 5.");
-			this.mpg=5;
+			System.out.println("The minimum mpg is 25.");
+			this.mpg=25;
 		}
 		return this;
 	}
@@ -113,6 +113,7 @@ public class Car {
 		System.out.println(prius.setNumberDoors(1).toString());
 		System.out.println(prius.accelerate(20).toString());
 		System.out.println(prius.brake().toString());
+		System.out.println(prius.setMpg(1).toString());
 	}
 
 
