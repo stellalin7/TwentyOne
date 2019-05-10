@@ -16,6 +16,10 @@ public class Dragon {
 		this.friendly = friendly;
 	}
 	
+	public Dragon(String name) {
+		this.name = name;
+	}
+	
 	@Override
 	public String toString() {
 		return "Dragon [name=" + name + ", fireBreathing=" + fireBreathing + ", wingSpan=" + wingSpan + ", height="
@@ -23,10 +27,9 @@ public class Dragon {
 	}
 	
 	public static void main(String[] args) {
-		Dragon puff = new Dragon();
+		Dragon puff = new Dragon("Puff the Magic Dragon");
 		System.out.println(puff.toString());
-		System.out.println(puff.setName("Puff the Magic Dragon").toString());
-
+		System.out.println(puff.getName() + " is growing: "+puff.growHeight(5).growWingSpan(10).toString());
 	}
 
 	public String getName() {
@@ -55,7 +58,17 @@ public class Dragon {
 		this.wingSpan = wingSpan;
 		return this;
 	}
+	
+	public Dragon growWingSpan(int growth) {
+		this.wingSpan += growth;
+		return this;
+	}
 
+	public Dragon growHeight(int growth) {
+		this.height += growth;
+		return this;
+	}
+	
 	public int getHeight() {
 		return height;
 	}
