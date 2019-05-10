@@ -22,9 +22,9 @@ public class Human {
 	}
 
 	public static void main(String[] args) {
-		Human person = new Human("Stella",'S',"Lin",43,"Female");
+		Human person = new Human();
 		System.out.println(person.toString());
-		System.out.println(person.setAge(44).toString());
+		System.out.println(person.setAge(11).toString());
 	}
 	
 	
