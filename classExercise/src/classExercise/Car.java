@@ -54,7 +54,13 @@ public class Car {
 	}
 
 	public Car setNumberDoors(int numberDoors) {
-		this.numberDoors = numberDoors;
+		if (numberDoors > 1 && numberDoors < 6) {
+			this.numberDoors = numberDoors;
+		}
+		else {
+			System.out.println(numberDoors + "is not a valid number of doors for a street-legal car.");
+			this.numberDoors = 4;
+		}
 		return this;
 	}
 
@@ -63,7 +69,12 @@ public class Car {
 	}
 
 	public Car setSpeed(int speed) {
-		this.speed = speed;
+		if (speed > 0) {
+			this.speed = speed;
+		}
+		else {
+			this.speed = 0;
+		}
 		return this;
 	}
 	
@@ -84,7 +95,13 @@ public class Car {
 	}
 
 	public Car setMpg(int mpg) {
-		this.mpg = mpg;
+		if (mpg>5) {
+			this.mpg = mpg;
+		}
+		else {
+			System.out.println("The minimum mpg is 5.");
+			this.mpg=5;
+		}
 		return this;
 	}
 	

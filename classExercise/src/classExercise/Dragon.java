@@ -59,7 +59,12 @@ public class Dragon {
 	}
 
 	public Dragon setWingSpan(int wingSpan) {
-		this.wingSpan = wingSpan;
+		if (wingSpan >1) {
+			this.wingSpan = wingSpan;
+		}
+		else {
+			this.wingSpan = 1;
+		}
 		return this;
 	}
 	
@@ -78,7 +83,11 @@ public class Dragon {
 	}
 
 	public Dragon setHeight(int height) {
-		this.height = height;
+		if (height>=1) {
+			this.height = height;
+		}else {
+			this.height = 1;
+		}
 		return this;
 	}
 
