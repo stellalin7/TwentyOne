@@ -75,7 +75,7 @@ public class Car {
 	
 	public Car brake() {
 		this.speed -= 10;
-		this.mpg += 1;
+		this.mpg += 2;
 		return this;
 	}
 
