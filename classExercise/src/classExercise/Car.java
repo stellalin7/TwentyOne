@@ -124,10 +124,10 @@ public class Car {
 			System.out.println(String.format("The %s %s and %s %s are equal in mpg.", prius.make, prius.model, insight.make, insight.model));
 		}
 		//System.out.println(prius.setSpeed(70).setMpg(40).toString());
-		System.out.println(prius.setNumberDoors(1).toString());
+		System.out.println(insight.setNumberDoors(1).toString());
 		System.out.println(prius.accelerate(20).toString());
 		System.out.println(prius.brake().toString());
-		System.out.println(prius.setMpg(1).toString());
+		System.out.println(insight.setMpg(1).toString());
 	}
 
 
