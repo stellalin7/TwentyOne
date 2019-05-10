@@ -24,7 +24,7 @@ public class Human {
 	public static void main(String[] args) {
 		Human person = new Human();
 		System.out.println(person.toString());
-		System.out.println(person.setAge(22).toString());
+		System.out.println(person.birthDay().toString());
 	}
 	
 	
@@ -63,6 +63,11 @@ public class Human {
 		this.age = age;
 		return this;
 	}
+	
+	public Human birthDay() {
+		this.age +=1;
+		return this;
+	}
 
 	public String getGender() {
 		return gender;
@@ -73,10 +78,7 @@ public class Human {
 		return this;
 	}
 	
-	
-	
-	public Human() {
-	}
+	public Human() {}
 
 	
 }

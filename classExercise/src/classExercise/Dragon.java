@@ -73,14 +73,8 @@ public class Dragon {
 		this.friendly = friendly;
 		return this;
 	}
-
 	
-	
-	public Dragon() {
-	}
-
-	
-
+	public Dragon() {}
 
 
 }

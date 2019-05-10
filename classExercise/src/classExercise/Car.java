@@ -26,8 +26,9 @@ public class Car {
 	public static void main(String[] args) {
 		Car prius = new Car();
 		System.out.println(prius.toString());
-		System.out.println(prius.setSpeed(70).setMpg(40).toString());
-
+		//System.out.println(prius.setSpeed(70).setMpg(40).toString());
+		System.out.println(prius.accelerate(20).toString());
+		System.out.println(prius.brake().toString());
 	}
 
 	public String getMake() {
@@ -65,6 +66,18 @@ public class Car {
 		this.speed = speed;
 		return this;
 	}
+	
+	public Car accelerate(int rev) {
+		this.speed+=rev;
+		this.mpg -= rev/5;
+		return this;
+	}
+	
+	public Car brake() {
+		this.speed -= 10;
+		this.mpg += 1;
+		return this;
+	}
 
 	public int getMpg() {
 		return mpg;
@@ -75,10 +88,6 @@ public class Car {
 		return this;
 	}
 	
-	
-	public Car() {
-	}
-
-	
+	public Car() {}
 
 }
