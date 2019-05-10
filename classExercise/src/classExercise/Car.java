@@ -8,6 +8,14 @@ public class Car {
 	private int numberDoors;
 	private int speed;
 	private int mpg;
+	
+	public Car() {
+		this.make = "Toyota";
+		this.model = "Prius";
+		this.numberDoors =5;
+		this.speed = 50;
+		this.mpg = 45;
+	}
 
 	public Car(String make, String model, int numberDoors, int speed, int mpg) {
 		this.make = make;
@@ -17,21 +25,7 @@ public class Car {
 		this.mpg = mpg;
 	}
 	
-	@Override
-	public String toString() {
-		return "Car [make=" + make + ", model=" + model + ", numberDoors=" + numberDoors + ", speed=" + speed + ", mpg="
-				+ mpg + "]";
-	}
 	
-	public static void main(String[] args) {
-		Car prius = new Car();
-		System.out.println(prius.toString());
-		//System.out.println(prius.setSpeed(70).setMpg(40).toString());
-		System.out.println(prius.setNumberDoors(1).toString());
-		System.out.println(prius.accelerate(20).toString());
-		System.out.println(prius.brake().toString());
-	}
-
 	public String getMake() {
 		return make;
 	}
@@ -106,12 +100,20 @@ public class Car {
 		return this;
 	}
 	
-	public Car() {
-		this.make = "Toyota";
-		this.model = "Prius";
-		this.numberDoors =5;
-		this.speed = 50;
-		this.mpg = 45;
+	@Override
+	public String toString() {
+		return "Car [make=" + make + ", model=" + model + ", numberDoors=" + numberDoors + ", speed=" + speed + ", mpg="
+				+ mpg + "]";
 	}
+	
+	public static void main(String[] args) {
+		Car prius = new Car();
+		System.out.println(prius.toString());
+		//System.out.println(prius.setSpeed(70).setMpg(40).toString());
+		System.out.println(prius.setNumberDoors(1).toString());
+		System.out.println(prius.accelerate(20).toString());
+		System.out.println(prius.brake().toString());
+	}
+
 
 }

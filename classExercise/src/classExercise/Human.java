@@ -8,6 +8,15 @@ public class Human {
 	private int age;
 	private String gender;
 	
+	public Human() {
+		this.firstName = "John";
+		this.middleInitial= 'X';
+		this.lastName = "Doe";
+		this.age =21;
+		this.gender= "non-binary";
+		
+	}
+	
 	public Human(String firstName, char middleInitial, String lastName,  int age, String gender) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -16,18 +25,7 @@ public class Human {
 		this.gender = gender;
 	}
 	
-	@Override
-	public String toString() {
-		return "Human [firstName=" + firstName + ", middleInitial=" + middleInitial+ ", lastName=" + lastName +  ", age=" + age + ", gender=" + gender + "]";
-	}
-
-	public static void main(String[] args) {
-		Human person = new Human();
-		System.out.println(person.toString());
-		System.out.println(person.setAge(-1).toString());
-		System.out.println(person.birthDay().toString());
-	}
-	
+		
 	
 	public String getFirstName() {
 		return firstName;
@@ -84,14 +82,18 @@ public class Human {
 		return this;
 	}
 	
-	public Human() {
-		this.firstName = "John";
-		this.middleInitial= 'X';
-		this.lastName = "Doe";
-		this.age =21;
-		this.gender= "non-binary";
-		
+	@Override
+	public String toString() {
+		return "Human [firstName=" + firstName + ", middleInitial=" + middleInitial+ ", lastName=" + lastName +  ", age=" + age + ", gender=" + gender + "]";
 	}
+
+	public static void main(String[] args) {
+		Human person = new Human();
+		System.out.println(person.toString());
+		System.out.println(person.setAge(-1).toString());
+		System.out.println(person.birthDay().toString());
+	}
+
 
 	
 }

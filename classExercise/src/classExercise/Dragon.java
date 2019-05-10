@@ -8,6 +8,15 @@ public class Dragon {
 	private int height;
 	private boolean friendly;
 
+	public Dragon() {
+		this.name = "Puff";
+		this.fireBreathing = true;
+		this.wingSpan = 20;
+		this.height = 15;
+		this.friendly = true;
+
+	}
+	
 	public Dragon(String name, boolean fireBreathing, int wingSpan, int height, boolean friendly) {
 		this.name = name;
 		this.fireBreathing = fireBreathing;
@@ -101,14 +110,7 @@ public class Dragon {
 		return this;
 	}
 	
-	public Dragon() {
-		this.name = "Puff";
-		this.fireBreathing = true;
-		this.wingSpan = 20;
-		this.height = 15;
-		this.friendly = true;
 
-	}
 
 
 }
