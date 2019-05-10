@@ -3,11 +3,11 @@ package classExercise;
 
 public class Car {
 
-	private String make = "Toyota";
-	private String model = "Prius";
-	private int numberDoors =5;
-	private int speed = 50;
-	private int mpg = 45;
+	private String make;
+	private String model;
+	private int numberDoors;
+	private int speed;
+	private int mpg;
 
 	public Car(String make, String model, int numberDoors, int speed, int mpg) {
 		this.make = make;
@@ -88,6 +88,12 @@ public class Car {
 		return this;
 	}
 	
-	public Car() {}
+	public Car() {
+		this.make = "Toyota";
+		this.model = "Prius";
+		this.numberDoors =5;
+		this.speed = 50;
+		this.mpg = 45;
+	}
 
 }

@@ -2,11 +2,11 @@ package classExercise;
 
 public class Dragon {
 	
-	private String name = "Puff";
-	private boolean fireBreathing = true;
-	private int wingSpan = 20;
-	private int height = 15;
-	private boolean friendly = true;
+	private String name;
+	private boolean fireBreathing;
+	private int wingSpan;
+	private int height;
+	private boolean friendly;
 
 	public Dragon(String name, boolean fireBreathing, int wingSpan, int height, boolean friendly) {
 		this.name = name;
@@ -18,6 +18,10 @@ public class Dragon {
 	
 	public Dragon(String name) {
 		this.name = name;
+		this.fireBreathing = true;
+		this.wingSpan = 20;
+		this.height = 15;
+		this.friendly = true;
 	}
 	
 	@Override
@@ -87,7 +91,14 @@ public class Dragon {
 		return this;
 	}
 	
-	public Dragon() {}
+	public Dragon() {
+		this.name = "Puff";
+		this.fireBreathing = true;
+		this.wingSpan = 20;
+		this.height = 15;
+		this.friendly = true;
+
+	}
 
 
 }

@@ -2,11 +2,11 @@ package classExercise;
 
 public class Human {
 	
-	private String firstName = "John";
-	private char middleInitial= 'X';
-	private String lastName = "Doe";
-	private int age =21;
-	private String gender= "non-binary";
+	private String firstName;
+	private char middleInitial;
+	private String lastName;
+	private int age;
+	private String gender;
 	
 	public Human(String firstName, char middleInitial, String lastName,  int age, String gender) {
 		this.firstName = firstName;
@@ -78,7 +78,14 @@ public class Human {
 		return this;
 	}
 	
-	public Human() {}
+	public Human() {
+		this.firstName = "John";
+		this.middleInitial= 'X';
+		this.lastName = "Doe";
+		this.age =21;
+		this.gender= "non-binary";
+		
+	}
 
 	
 }
