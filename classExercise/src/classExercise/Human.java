@@ -1,6 +1,5 @@
 package classExercise;
 
-import java.util.Objects;
 
 public class Human {
 	
