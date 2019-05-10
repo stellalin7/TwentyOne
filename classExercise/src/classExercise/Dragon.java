@@ -32,19 +32,6 @@ public class Dragon {
 		this.height = 15;
 		this.friendly = true;
 	}
-	
-	@Override
-	public String toString() {
-		return "Dragon [name=" + name + ", fireBreathing=" + fireBreathing + ", wingSpan=" + wingSpan + ", height="
-				+ height + ", friendly=" + friendly + "]";
-	}
-	
-	public static void main(String[] args) {
-		Dragon puff = new Dragon("Puff the Magic Dragon");
-		System.out.println(puff.toString());
-		System.out.println(puff.setHeight(0).setWingSpan(0).toString());
-		System.out.println(puff.getName() + " is growing: "+puff.growHeight(5).growWingSpan(10).toString());
-	}
 
 	public String getName() {
 		return name;
@@ -109,8 +96,46 @@ public class Dragon {
 		this.friendly = friendly;
 		return this;
 	}
+
 	
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Dragon other = (Dragon) obj;
+		if (fireBreathing != other.fireBreathing)
+			return false;
+		if (friendly != other.friendly)
+			return false;
+		if (height != other.height)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (wingSpan != other.wingSpan)
+			return false;
+		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return "Dragon [name=" + name + ", fireBreathing=" + fireBreathing + ", wingSpan=" + wingSpan + ", height="
+				+ height + ", friendly=" + friendly + "]";
+	}
+	
+	public static void main(String[] args) {
+		Dragon puff = new Dragon("Puff the Magic Dragon");
+		System.out.println(puff.toString());
+		System.out.println(puff.setHeight(0).setWingSpan(0).toString());
+		System.out.println(puff.getName() + " is growing: "+puff.growHeight(5).growWingSpan(10).toString());
+	}
 
 
 }
