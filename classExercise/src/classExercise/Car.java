@@ -104,6 +104,10 @@ public class Car {
 		return this;
 	}
 	
+	public static boolean mpgEqual(Car c1, Car c2) {
+		return c1.getMpg()==c2.getMpg();
+	}
+	
 	@Override
 	public String toString() {
 		return "Car [make=" + make + ", model=" + model + ", numberDoors=" + numberDoors + ", speed=" + speed + ", mpg="
@@ -113,6 +117,12 @@ public class Car {
 	public static void main(String[] args) {
 		Car prius = new Car();
 		System.out.println(prius.toString());
+		Car insight = new Car("Honda","Insight",2,45,45);
+		System.out.println(insight.toString());
+		
+		if (mpgEqual(prius, insight)) {
+			System.out.println(String.format("The %s %s and %s %s are equal in mpg.", prius.make, prius.model, insight.make, insight.model));
+		}
 		//System.out.println(prius.setSpeed(70).setMpg(40).toString());
 		System.out.println(prius.setNumberDoors(1).toString());
 		System.out.println(prius.accelerate(20).toString());
