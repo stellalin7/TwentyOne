@@ -14,7 +14,6 @@ public class Dragon {
 		this.wingSpan = 20;
 		this.height = 15;
 		this.friendly = true;
-
 	}
 	
 	public Dragon(String name, boolean fireBreathing, int wingSpan, int height, boolean friendly) {
@@ -97,8 +96,6 @@ public class Dragon {
 		return this;
 	}
 
-	
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -129,6 +126,8 @@ public class Dragon {
 		return "Dragon [name=" + name + ", fireBreathing=" + fireBreathing + ", wingSpan=" + wingSpan + ", height="
 				+ height + ", friendly=" + friendly + "]";
 	}
+	
+	
 	
 	public static void main(String[] args) {
 		Dragon puff = new Dragon("Puff the Magic Dragon");
