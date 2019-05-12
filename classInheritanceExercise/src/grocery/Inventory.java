@@ -3,7 +3,7 @@ package grocery;
 import java.time.LocalDate;
 import java.time.Period;
 
-public abstract class Category {
+public abstract class Inventory {
 
 	private String productName;
 	private String upc;
@@ -14,7 +14,7 @@ public abstract class Category {
 	private boolean onSale;
 	private double discount;
 	
-	public Category(String productName, String upc, int quantity, double cost, double sellPrice) {
+	public Inventory(String productName, String upc, int quantity, double cost, double sellPrice) {
 		this.productName = productName;
 		this.upc = upc;
 		this.quantity = quantity;
@@ -65,15 +65,15 @@ public abstract class Category {
 	public boolean isOnSale() {
 		return onSale;
 	}
-	public void setOnSale(boolean onSale, double originalPrice) {
+	public void setOnSale(boolean onSale) {
 		this.onSale = onSale;
 		if (onSale) {
 			this.sellPrice=this.salePrice();
 			System.out.println(String.format(this.productName + " is now being put on sale at $%.2f %n",this.sellPrice));
 		}
 		else {
-			this.sellPrice=originalPrice;
-			System.out.println(this.productName + " is no longer on sale.");
+			this.sellPrice=Math.round(100.00*this.sellPrice/(1-this.discount))/100.00;
+			System.out.println(this.productName + " is now being sold at the original price of $"+this.sellPrice);
 		}
 	}
 	public double getDiscount() {
