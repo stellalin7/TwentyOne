@@ -52,9 +52,9 @@ public abstract class Product {
 	public double getSellPrice() {
 		return sellPrice;
 	}
-//	public void setSellPrice(double sellPrice) {
-//		this.sellPrice = sellPrice;
-//	}
+	public void setSellPrice(double sellPrice) {
+		this.sellPrice = sellPrice;
+	}
 	public LocalDate getSellBy() {
 		return sellBy;
 	}
