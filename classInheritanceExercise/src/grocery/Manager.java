@@ -10,20 +10,16 @@ public class Manager {
 		LocalDate almondMilkSellBy = LocalDate.of(2019, 5, 25);
 		almondMilk.setSellBy(almondMilkSellBy);
 		if (almondMilk.needToBeSoldThisWeek()>0) {
-			almondMilk.setDiscount(.20);
-			almondMilk.setOnSale(true);
+			almondMilk.setDiscount(.20).setOnSale(true);
 			}
 		almondMilk.profit();
 		LocalDate mascarponeSellBy = LocalDate.of(2019, 5, 15);
 		mascarpone.setSellBy(mascarponeSellBy);
 		if (mascarpone.needToBeSoldThisWeek()>0) {
-			mascarpone.setDiscount(.10);
-			mascarpone.setOnSale(true);
+			mascarpone.setDiscount(.10).setOnSale(true);
 			}
 		mascarpone.profit();
-		mascarpone.setSellPrice(6.59);
-		mascarpone.profit();
-		
+		mascarpone.setSellPrice(6.59).profit();
 	}
 
 }

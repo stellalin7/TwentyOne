@@ -52,9 +52,10 @@ public abstract class Product {
 	public double getSellPrice() {
 		return sellPrice;
 	}
-	protected void setSellPrice(double sellPrice) {
+	protected Product setSellPrice(double sellPrice) {
 		this.sellPrice = sellPrice;
 		System.out.println("Sell Price for "+this.productName+ " is now $"+this.sellPrice);
+		return this;
 	}
 	public LocalDate getSellBy() {
 		return sellBy;
@@ -80,9 +81,10 @@ public abstract class Product {
 	public double getDiscount() {
 		return discount;
 	}
-	public void setDiscount(double discount) {
+	public Product setDiscount(double discount) {
 		this.discount = discount;
 		System.out.println("Discount percentage of "+this.productName+" is now being set to "+discount*100+"%");
+		return this;
 	}
 	
 	public int needToBeSoldThisWeek(){
