@@ -13,6 +13,7 @@ public abstract class Product {
 	private LocalDate sellBy;
 	private boolean onSale;
 	private double discount;
+	private final static double MIN_PRICE = 0;
 	
 	public Product(String productName, String upc, int quantity, double cost, double sellPrice) {
 		this.productName = productName;
@@ -65,8 +66,14 @@ public abstract class Product {
 		return sellPrice;
 	}
 	protected Product setSellPrice(double sellPrice) {
-		this.sellPrice = sellPrice;
-		System.out.println("Sell Price for "+this.productName+ " is now $"+this.sellPrice);
+		if(sellPrice > MIN_PRICE) {
+			this.sellPrice = sellPrice;
+			System.out.println("Sell Price for "+this.productName+ " is now $"+this.sellPrice);
+		}
+		else {
+			System.out.println("Sell Price must be a positive number.");
+			System.out.println("The Sell Price for "+this.productName+ " is still $"+this.sellPrice);
+		}
 		return this;
 	}
 	public LocalDate getSellBy() {
