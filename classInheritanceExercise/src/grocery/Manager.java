@@ -12,11 +12,10 @@ public class Manager {
 			almondMilk.setDiscount(.20).setOnSale(true);
 		}
 		almondMilk.profit();
-		almondMilk.setSellPrice(0).profit();
 		LocalDate mascarponeSellBy = LocalDate.of(2019, 5, 15);
 		Cheese mascarpone = new Cheese("mascarpone","000000009",5,2.75,5.99,mascarponeSellBy);
 		if (mascarpone.needToBeSoldThisWeek()>0) {
-			mascarpone.setDiscount(.10).setOnSale(true);
+			mascarpone.setDiscount(.75).setOnSale(true);
 		}
 		mascarpone.profit();
 	}
