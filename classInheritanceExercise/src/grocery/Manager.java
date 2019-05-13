@@ -21,6 +21,8 @@ public class Manager {
 			mascarpone.setOnSale(true);
 			}
 		mascarpone.profit();
+		mascarpone.setSellPrice(6.59);
+		mascarpone.profit();
 		
 	}
 

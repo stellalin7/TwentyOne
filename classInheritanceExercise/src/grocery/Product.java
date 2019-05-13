@@ -52,8 +52,9 @@ public abstract class Product {
 	public double getSellPrice() {
 		return sellPrice;
 	}
-	public void setSellPrice(double sellPrice) {
+	protected void setSellPrice(double sellPrice) {
 		this.sellPrice = sellPrice;
+		System.out.println("Sell Price for "+this.productName+ " is now $"+this.sellPrice);
 	}
 	public LocalDate getSellBy() {
 		return sellBy;
