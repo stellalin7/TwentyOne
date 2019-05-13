@@ -28,15 +28,15 @@ public abstract class Product {
 	public String getProductName() {
 		return productName;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
+//	public void setProductName(String productName) {
+//		this.productName = productName;
+//	}
 	public String getUpc() {
 		return upc;
 	}
-	public void setUpc(String upc) {
-		this.upc = upc;
-	}
+//	public void setUpc(String upc) {
+//		this.upc = upc;
+//	}
 	public int getQuantity() {
 		return quantity;
 	}
@@ -46,15 +46,15 @@ public abstract class Product {
 	public double getCost() {
 		return cost;
 	}
-	public void setCost(double cost) {
-		this.cost = cost;
-	}
+//	public void setCost(double cost) {
+//		this.cost = cost;
+//	}
 	public double getSellPrice() {
 		return sellPrice;
 	}
-	public void setSellPrice(double sellPrice) {
-		this.sellPrice = sellPrice;
-	}
+//	public void setSellPrice(double sellPrice) {
+//		this.sellPrice = sellPrice;
+//	}
 	public LocalDate getSellBy() {
 		return sellBy;
 	}
