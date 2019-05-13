@@ -5,20 +5,8 @@ import java.time.Period;
 
 public abstract class Product {
 
-	public Product(String productName, String upc, int quantity, double cost, double sellPrice, LocalDate sellBy) {
-		super();
-		this.productName = productName;
-		this.upc = upc;
-		this.quantity = quantity;
-		this.cost = cost;
-		this.sellPrice = sellPrice;
-		this.sellBy = sellBy;
-		this.onSale = false;
-		this.discount = 0.10;
-	}
-
-	private String productName;
-	private String upc;
+	private final String productName;
+	private final String upc;
 	private int quantity;
 	private double cost;
 	private double sellPrice;
@@ -33,6 +21,18 @@ public abstract class Product {
 		this.cost = cost;
 		this.sellPrice = sellPrice;
 		this.sellBy = LocalDate.now();
+		this.onSale = false;
+		this.discount = 0.10;
+	}
+	
+	public Product(String productName, String upc, int quantity, double cost, double sellPrice, LocalDate sellBy) {
+		super();
+		this.productName = productName;
+		this.upc = upc;
+		this.quantity = quantity;
+		this.cost = cost;
+		this.sellPrice = sellPrice;
+		this.sellBy = sellBy;
 		this.onSale = false;
 		this.discount = 0.10;
 	}
