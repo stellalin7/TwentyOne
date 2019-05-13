@@ -3,7 +3,7 @@ package grocery;
 import java.time.LocalDate;
 import java.time.Period;
 
-public abstract class Inventory {
+public abstract class Product {
 
 	private String productName;
 	private String upc;
@@ -14,7 +14,7 @@ public abstract class Inventory {
 	private boolean onSale;
 	private double discount;
 	
-	public Inventory(String productName, String upc, int quantity, double cost, double sellPrice) {
+	public Product(String productName, String upc, int quantity, double cost, double sellPrice) {
 		this.productName = productName;
 		this.upc = upc;
 		this.quantity = quantity;

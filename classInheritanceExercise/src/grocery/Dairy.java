@@ -2,7 +2,7 @@ package grocery;
 
 
 
-public class Dairy extends Inventory {
+public class Dairy extends Product {
 	
 
 	public Dairy(String productName, String upc, int quantity, double cost, double sellPrice) {
