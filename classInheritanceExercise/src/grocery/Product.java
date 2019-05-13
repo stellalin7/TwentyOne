@@ -1,5 +1,35 @@
 package grocery;
 
+/*A product should be an object created from a class. Each category should be its own type. Each product should have the base properties of:
+
+name
+
+quantity
+
+serial number
+
+cost
+
+sell price
+
+Other features to think about:
+
+Add "sell by" dates to each product
+
+Have it so the manager can see how many items need to be sold within the week.
+
+List it out by product.
+
+Determine how much
+
+each product cost the store to purchase
+
+each product could bring in in revenue
+
+each product would make in profit
+
+Create the ability to put an item on sale, or take an item off sale. Determine the sale discount.*/
+
 import java.time.LocalDate;
 import java.time.Period;
 
