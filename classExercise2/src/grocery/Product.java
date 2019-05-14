@@ -169,7 +169,6 @@ public abstract class Product {
 	
 	public double salePrice() {
 		double salePrice = this.sellPrice - this.sellPrice*this.discount;
-		
 		return Math.round(100.00*salePrice)/100.00;
 	}
 

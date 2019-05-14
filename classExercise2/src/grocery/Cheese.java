@@ -3,7 +3,6 @@ package grocery;
 import java.time.LocalDate;
 
 public class Cheese extends Product {
-	
 
 	public Cheese(String productName, String upc, int quantity, double cost, double sellPrice) {
 		super(productName, upc, quantity, cost, sellPrice);
