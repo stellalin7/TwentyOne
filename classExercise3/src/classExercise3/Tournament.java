@@ -97,44 +97,55 @@ public class Tournament {
 	
 	public static void matchUps() {
 		int numberTeams = seededTeams.size();
-		int numberMatchups = numberTeams/2;
-		System.out.println(numberMatchups+ " match-ups for " +numberTeams + " teams in the tournament.");
-		if (numberTeams%2 ==1) {
-			System.out.println("The top-seeded team "+seededTeams.get(0)+" gets a bye because there is an odd number of teams in the tournament.");
-			for (int i = 0; i< numberMatchups; i++) {
-				System.out.println(seededTeams.get(i+1) + " will play "+seededTeams.get(numberTeams-(i+1)));
-				if (play()) {
-					System.out.println(seededTeams.get(i+1)+ " was the winner.");
-					System.out.println("These two teams' seeds remain unchanged.");
+		if (numberTeams == 1) {
+			System.out.println(seededTeams.get(0)+" has won the last match and the tournament.");
+		}
+		else {
+			int numberMatchups = numberTeams/2;
+			System.out.println(numberMatchups+ " match-ups for " +numberTeams + " teams in the tournament.");
+			if (numberTeams%2 ==1) {
+				System.out.println("The top-seeded team "+seededTeams.get(0)+" gets a bye because there is an odd number of teams in the tournament.");
+				for (int i = 0; i< numberMatchups; i++) {
+					System.out.println(seededTeams.get(i+1) + " will play "+seededTeams.get(numberTeams-(i+1)));
+					if (play()) {
+						System.out.println(seededTeams.get(i+1)+ " was the winner.");
+						System.out.println("These two teams' seeds remain unchanged.");
+					}
+					else {
+						System.out.println(seededTeams.get(numberTeams-(i+1))+ " was the winner.");
+						String oldTop = seededTeams.get(i+1);
+						String oldBottom = seededTeams.get(numberTeams-(i+1));
+						seededTeams.remove(i+1);
+						seededTeams.add(i+1,oldBottom);
+						seededTeams.remove(numberTeams-(i+1));
+						//seededTeams.add(numberTeams-(i+1), oldTop);
+						System.out.println(seededTeams.get(i+1) + " is now seed "+(i+2)+" and "+ oldTop + " has been eliminated.");
+					}	
 				}
-				else {
-					System.out.println(seededTeams.get(numberTeams-(i+1))+ " was the winner.");
-					String oldTop = seededTeams.get(i+1);
-					String oldBottom = seededTeams.get(numberTeams-(i+1));
-					seededTeams.remove(i+1);
-					seededTeams.add(i+1,oldBottom);
-					seededTeams.remove(numberTeams-(i+1));
-					seededTeams.add(numberTeams-(i+1), oldTop);
-					System.out.println(seededTeams.get(i+1) + " is now seed "+(i+2)+" and "+ seededTeams.get(numberTeams-(i+1))+ " is now seed "+ (numberTeams-i));
-				}	
-			}
-		}else {
-			for (int i = 0; i< numberMatchups; i++) {
-				System.out.println(seededTeams.get(i) + " will play "+seededTeams.get(numberTeams-(i+1)));
-				if (play()) {
-					System.out.println(seededTeams.get(i)+ " was the winner.");
-					System.out.println("These two teams' seeds remain unchanged.");
+			}else {
+				for (int i = 0; i< numberMatchups; i++) {
+					System.out.println(seededTeams.get(i) + " will play "+seededTeams.get(numberTeams-(i+1)));
+					if (play()) {
+						System.out.println(seededTeams.get(i)+ " was the winner");
+						if (numberMatchups == 1) {
+							System.out.println("of the tournament.");
+							seededTeams.remove(numberTeams-(i+1));
+						}
+						else {
+						System.out.println("These two teams' seeds remain unchanged.");
+						}
+					}
+					else {
+						System.out.println(seededTeams.get(numberTeams-(i+1))+ " was the winner.");
+						String oldTop = seededTeams.get(i);
+						String oldBottom = seededTeams.get(numberTeams-(i+1));
+						seededTeams.remove(i);
+						seededTeams.add(i,oldBottom);
+						seededTeams.remove(numberTeams-(i+1));
+						//seededTeams.add(numberTeams-(i+1), oldTop);
+						System.out.println(seededTeams.get(i) + " is now seed "+(i+1)+" and "+ oldTop + " has been eliminated.");
+					}	
 				}
-				else {
-					System.out.println(seededTeams.get(numberTeams-(i+1))+ " was the winner.");
-					String oldTop = seededTeams.get(i);
-					String oldBottom = seededTeams.get(numberTeams-(i+1));
-					seededTeams.remove(i);
-					seededTeams.add(i,oldBottom);
-					seededTeams.remove(numberTeams-(i+1));
-					seededTeams.add(numberTeams-(i+1), oldTop);
-					System.out.println(seededTeams.get(i) + " is now seed "+(i+1)+" and "+ seededTeams.get(numberTeams-(i+1))+ " is now seed "+ (numberTeams-i));
-				}	
 			}
 		}
 	}
