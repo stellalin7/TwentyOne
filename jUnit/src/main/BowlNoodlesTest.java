@@ -3,6 +3,7 @@ package main;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -45,19 +46,19 @@ class BowlNoodlesTest {
 		nautica.add("Stephanie");
 		nautica.add("Darren");
 		nautica.add("Stella");
-		String[] nautica1 = (String[])nautica.toArray();
-		assertArrayEquals(nautica1,arrayFunc1("Stella"));
+		//String[] nautica1 = (String[])nautica.toArray();
+		assertEquals(nautica,arrayFunc1("Stella"));
 	}
 
-	private String[] arrayFunc1(String name) {
+	private ArrayList <String> arrayFunc1(String name) {
 		ArrayList <String> nautica = new ArrayList <String>();
 		nautica.add("Jared");
 		nautica.add("Stephanie");
 		nautica.add("Darren");
 		nautica.add(name);
 		nautica.toArray();
-		String[] nautica1 = (String[])nautica.toArray();
-		return nautica1;
+		//String[] nautica1 = (String[])nautica.toArray();
+		return nautica;
 	}
 	
 	
