@@ -23,7 +23,7 @@ public class TwentyOne {
 				keepPlaying = check();
 			}
 			if (compTotal <= 21 && playerTotal <=21) {
-				compare(compTotal, playerTotal);
+				compareHands(compTotal, playerTotal);
 			}
 		}
 		else {
@@ -31,14 +31,16 @@ public class TwentyOne {
 		}
 	}
 	
-	public static void compare(int computer, int player) {
+	public static boolean compareHands(int computer, int player) {
 		/*v1-v2
 		if(player>21) {
 			System.out.println("Computer wins.");
 		}else {*/
+		boolean houseWins = true;
 			if (player > computer) {
 				System.out.println(String.format("You won.  Your total was %d, and the dealer's was %d.", player, computer));
 				System.out.println("Dealer's hidden card was a "+hiddenCard);
+				houseWins = false;
 			}
 			else {
 				System.out.println(String.format("You lost.  Your total was %d, and the dealer's was %d.", player, computer));
@@ -48,6 +50,7 @@ public class TwentyOne {
 				}
 			}
 		//}
+		return houseWins;
 	}
 	
 	public static boolean check() {
