@@ -43,23 +43,31 @@ public class Tournament {
 		System.out.println("Enter 3 to list the matchups in the tournament.");
 		System.out.println("Enter 0 to exit the tournament.");
 		System.out.println("Please enter the number for your selection:");
-		int selection = menu.nextInt();
-		switch (selection) {
-		case (1):
-			enterTeams();
-			break;
-		case(2):
-			System.out.println("The teams in your tournament, in order of seeding from top to bottom are: "+seededTeams);
-			break;
-		case(3):
-			matchUps();
-			break;
-		case(0):
-			System.out.println("Thank you for playing.");
-			menu.close();
-			cont = false;
-			break;
-		default: 
+		try {
+			int selection = menu.nextInt();
+			switch (selection) {
+			case (1):
+				enterTeams();
+				break;
+			case(2):
+				System.out.println("The teams in your tournament, in order of seeding from top to bottom are: "+seededTeams);
+				break;
+			case(3):
+				matchUps();
+				break;
+			case(0):
+				System.out.println("Thank you for playing.");
+				menu.close();
+				cont = false;
+				break;
+			default: 
+				System.out.println("Unrecognized input.  Exiting program.");
+				menu.close();
+				cont = false;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
 			System.out.println("Unrecognized input.  Exiting program.");
 			menu.close();
 			cont = false;
@@ -69,28 +77,37 @@ public class Tournament {
 	
 	public static void enterTeams () {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Please enter the name of the top-seeded team in your tournament:");
-		seededTeams.add(input.nextLine());
-		System.out.println("Please enter the name of the next-seeded team in your tournament:");
-		seededTeams.add(input.nextLine());
+		int current = seededTeams.size()+1;
+		for (int i = 0; i<2; i++) {
+			System.out.println(String.format("Please enter the name of the seed %d team in your tournament:", current+i));
+			seededTeams.add(input.nextLine());
+		}
+		
 		boolean cont = true;
 		while (cont) {
 			System.out.println("Would you like to enter more teams into the tournament? Please enter 1 to continue adding teams, or 0 to exit to the main menu.");
-			int selection = input.nextInt();
-			switch (selection) {
-			case (1):
-				Scanner in = new Scanner(System.in);
-				System.out.println("Please enter the name of the next-seeded team in your tournament:");
-				String nextTeam = in.nextLine();
-				seededTeams.add(nextTeam);
-				continue;
-			case(0):
-				cont = false;
-				break;
-			default: 
+			try{
+				int selection = input.nextInt();
+				switch (selection) {
+				case (1):
+					Scanner in = new Scanner(System.in);
+					System.out.println("Please enter the name of the next-seeded team in your tournament:");
+					String nextTeam = in.nextLine();
+					seededTeams.add(nextTeam);
+					continue;
+				case(0):
+					cont = false;
+					break;
+				default: 
+					System.out.println("Unrecognized input.  Exiting to main menu.");
+					cont = false;
+				}	
+			}
+			catch(Exception e) {
+				//e.printStackTrace();
 				System.out.println("Unrecognized input.  Exiting to main menu.");
 				cont = false;
-			}	
+			}
 		}
 		//input.close();
 	}

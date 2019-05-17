@@ -166,11 +166,17 @@ public class TwentyOne {
 	public static int getAceValue() {
 		System.out.println("What would you like to be the value of this ace?  Please enter 1 or 11.");
 		Scanner input = new Scanner(System.in);
-		int ace = input.nextInt();
-		if (ace == 1 || ace ==11) {
-			return ace;
-		}
-		else {
+		try {
+			int ace = input.nextInt();
+			if (ace == 1 || ace ==11) {
+				return ace;
+			}
+			else {
+				System.out.println("Invalid value. Ace will be set to value 1.");
+				return 1;
+			}
+		} catch (Exception e) {
+			//e.printStackTrace();
 			System.out.println("Invalid value. Ace will be set to value 1.");
 			return 1;
 		}

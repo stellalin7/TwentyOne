@@ -27,7 +27,15 @@ public class ArrayListExer {
 	
 	public static int fill(Scanner input, int i){
 		System.out.println(String.format("Please enter an integer for number %d in your ArrayList:", i+1));
-		return input.nextInt();
+		try {
+			int next =input.nextInt();
+			return next;
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println(String.format("Invalid input received. Number %d in your ArrayList is being set to 1.", i+1));
+			return 1;
+		}
 	}
 	
 	public static int sum(ArrayList<Integer> all) {
