@@ -8,11 +8,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class BowlNoodlesTest {
-
-	@Test
-	void test() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	public void sumTest() {

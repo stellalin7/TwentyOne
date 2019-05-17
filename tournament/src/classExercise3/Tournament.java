@@ -95,7 +95,7 @@ public class Tournament {
 		//input.close();
 	}
 	
-	public static void matchUps() {
+	public static int matchUps() {
 		int numberTeams = seededTeams.size();
 		if (numberTeams == 1) {
 			System.out.println(seededTeams.get(0)+" has won the last match and the tournament.");
@@ -148,6 +148,7 @@ public class Tournament {
 				}
 			}
 		}
+		return seededTeams.size();
 	}
 	
 	public static boolean play() {
