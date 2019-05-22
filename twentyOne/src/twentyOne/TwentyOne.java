@@ -172,12 +172,12 @@ public class TwentyOne {
 				return ace;
 			}
 			else {
-				System.out.println("Invalid value. Ace will be set to value 1.");
+				System.out.println("Invalid value. The value of this ace will be set to 1.");
 				return 1;
 			}
 		} catch (Exception e) {
 			//e.printStackTrace();
-			System.out.println("Invalid value. Ace will be set to value 1.");
+			System.out.println("Invalid value. The value of this ace will be set to 1.");
 			return 1;
 		}
 	}

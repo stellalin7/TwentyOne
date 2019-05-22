@@ -53,8 +53,8 @@ public class Main {
 	public static void sortArrayAscending() {
 		for(int i=0;i<numberArray.length;i++) {
 			for(int j=0; j<numberArray.length-1; j++) {
-				int hold = numberArray[j];
 				if(numberArray[j]<numberArray[j+1]) {
+					int hold = numberArray[j];
 					numberArray[j]=numberArray[j+1];
 					numberArray[j+1]=hold;
 				}	
@@ -69,8 +69,8 @@ public class Main {
 	public static void sortArrayDescending() {
 		for(int i=0;i<numberArray.length;i++) {
 			for(int j=0; j<numberArray.length-1; j++) {
-				int hold = numberArray[j];
 				if(numberArray[j]>numberArray[j+1]) {
+					int hold = numberArray[j];
 					numberArray[j]=numberArray[j+1];
 					numberArray[j+1]=hold;
 				}	
